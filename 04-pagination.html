@@ -9,84 +9,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .container {
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "inter", sans-serif;
+        color: #343a40;
+        /* line-height: 1; */
         display: flex;
-        width: 294px;
-        margin: 100px auto;
-        /* background-color: violet; */
-        gap: 10px;
-        font-family: "inter";
-        font-size: 13px;
-        /* background-color: #087f5b; */
+        justify-content: center;
       }
-      button {
-        background-color: white;
-        border: solid 1px #087f5b;
+      .pagination {
+        margin-top: 200px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .btn {
         border-radius: 50%;
-        height: 33px;
-        display: grid;
-
-        transform: translate(0, 10px);
-      }
-      button:hover,
-      button:active {
-        background-color: #087f5b;
-        border: solid 1px #087f5b;
+        height: 48px;
+        width: 48px;
+        border: 1px solid #087f5b;
+        background: none;
         cursor: pointer;
-        color: white;
       }
-      .icon {
-        height: 20px;
-        width: 20px;
-        stroke: #087f5b;
-        align-self: center;
+      .btn:hover {
+        background-color: #087f5b;
       }
-      .icon:hover,
-      .icon:active {
+      .btn:hover .btn-icon {
         stroke: white;
-        cursor: pointer;
       }
-      .third {
+      .btn-icon {
+        width: 24px;
+        height: 24px;
+        stroke: #087f5b;
+      }
+      span {
+        color: #868e96;
+      }
+      .page-link {
+        text-decoration: none;
+        color: #343a40;
+        font-size: 18px;
+        height: 36px;
+        width: 36px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 50%;
+      }
+      .page-link:hover,
+      .page-link:active {
         color: white;
         background-color: #087f5b;
-        padding: 4px 8px;
-        border-radius: 50%;
-        cursor: pointer;
       }
-      .all {
-        padding: 4px 8px;
-      }
-      .all:hover,
-      .all:active {
+      .page-link--current {
+        color: white;
         background-color: #087f5b;
-        padding: 4px 8px;
-        border-radius: 50%;
-        color: #fff;
-        cursor: pointer;
-      }
-      .last {
-        padding: 2px 4px;
-      }
-      .last:hover,
-      .last:active {
-        background-color: #087f5b;
-        padding: 3px 4px;
-        border-radius: 50%;
-        color: #fff;
-        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <button>
+    <div class="pagination">
+      <button class="btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="left-icon icon"
+          class="btn-icon"
         >
           <path
             stroke-linecap="round"
@@ -95,22 +89,22 @@
           />
         </svg>
       </button>
-      <p class="all">1</p>
-      <p class="all">2</p>
-      <p class="third">3</p>
-      <p class="all">4</p>
-      <p class="all">5</p>
-      <p class="all">6</p>
-      <p class="seventh">...</p>
-      <p class="last">23</p>
-      <button>
+      <a href="#" class="page-link">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link page-link--current">3</a>
+      <a href="#" class="page-link">4</a>
+      <a href="#" class="page-link">5</a>
+      <a href="#" class="page-link">6</a>
+      <span>...</span>
+      <a href="#" class="page-link">23</a>
+      <button class="btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="right-icon icon"
+          class="btn-icon"
         >
           <path
             stroke-linecap="round"
